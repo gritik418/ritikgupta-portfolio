@@ -26,7 +26,6 @@ import {
 } from "react-icons/si";
 import { MdApi } from "react-icons/md";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
 import techStackAnimations from "../../animations/techStackAnimations";
 
 const techStack = {

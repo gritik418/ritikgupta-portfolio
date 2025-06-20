@@ -7,7 +7,7 @@ const Navbar = () => {
   });
 
   return (
-    <nav className="fixed top-0 w-screen z-50 flex items-center justify-center bg-violet-900/20 backdrop-blur-md shadow-lg">
+    <nav className="fixed top-0 w-screen z-50 flex items-center justify-center bg-violet-900/30 backdrop-blur-md shadow-lg">
       <div className="max-w-7xl container mx-auto px-6 h-20 flex items-center justify-between">
         <h1 className="text-white text-2xl font-bold tracking-wide">RG.</h1>
 
