@@ -1,7 +1,7 @@
 import gsap from "gsap";
 
 export default function navbarAnimations() {
-  gsap.from("nav h1,nav ul li", {
+  gsap.from("nav img,nav ul li", {
     y: -30,
     opacity: 0,
     duration: 1,

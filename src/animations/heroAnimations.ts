@@ -1,7 +1,7 @@
 import gsap from "gsap";
 
 export default function heroAnimations() {
-  gsap.from(".hero h1,.hero p, a", {
+  gsap.from(".hero h1,.hero p, .hero a", {
     x: -300,
     opacity: 0,
     duration: 0.8,

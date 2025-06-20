@@ -23,6 +23,9 @@ import {
   SiSocketdotio,
   SiAuth0,
   SiNpm,
+  SiGreensock,
+  SiNestjs,
+  SiGraphql,
 } from "react-icons/si";
 import { MdApi } from "react-icons/md";
 import { useGSAP } from "@gsap/react";
@@ -38,10 +41,13 @@ const techStack = {
     { name: "Chakra UI", icon: <SiChakraui className="text-teal-400" /> },
     { name: "shadcn/ui", icon: <SiShadcnui /> },
     { name: "Bootstrap", icon: <SiBootstrap className="text-purple-400" /> },
+    { name: "GSAP", icon: <SiGreensock className="text-green-400" /> },
   ],
   Backend: [
     { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
     { name: "Express.js", icon: <SiExpress /> },
+    { name: "NestJS", icon: <SiNestjs className="text-red-500" /> },
+    { name: "GraphQL", icon: <SiGraphql className="text-pink-500" /> },
     { name: "Prisma", icon: <SiPrisma className="text-white" /> },
     { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
     { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-500" /> },
@@ -70,7 +76,7 @@ const TechStack = () => {
   });
 
   return (
-    <section className="pb-16 text-white">
+    <section id="techStack" className="pb-16 text-white">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-12">Tech Stack</h2>
         <div className="grid gap-12">
