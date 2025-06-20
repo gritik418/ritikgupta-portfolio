@@ -1,27 +1,14 @@
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import HeroImage from "../../assets/hero-img.png";
+import heroAnimations from "../../animations/heroAnimations";
 
 const Hero = () => {
   useGSAP(() => {
-    gsap.from(".hero h1, p, a", {
-      x: -300,
-      opacity: 0,
-      duration: 0.8,
-      delay: 0.7,
-      stagger: 0.1,
-    });
-
-    gsap.from(".hero img", {
-      x: 300,
-      opacity: 0,
-      duration: 0.8,
-      delay: 0.7,
-    });
+    heroAnimations();
   });
 
   return (
-    <section className="min-h-screen hero py-20 flex bg-gradient-to-br from-[#2c003e] to-black items-center justify-center px-6">
+    <section className="min-h-screen hero pt-20 flex items-center justify-center px-6">
       <div className="container flex flex-col lg:flex-row gap-4 items-center justify-between">
         <div className="w-full py-30 lg:py-0 lg:w-[50%] min-h-[400px] flex flex-col lg:pr-8 items-center lg:items-start justify-center">
           <h1 className="text-white text-5xl font-bold tracking-tight">
