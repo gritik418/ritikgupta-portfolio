@@ -1,23 +1,17 @@
 import gsap from "gsap";
 
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
 export default function techStackAnimations() {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".techItem",
-      scroller: "body",
-      start: "top 100%",
-      scrub: 2,
-    },
-  });
-
-  tl.from(".techItem", {
-    x: -100,
+  gsap.from(".techItem", {
+    x: -60,
     opacity: 0,
     duration: 1,
     stagger: 0.4,
+    scrollTrigger: {
+      trigger: ".techItem",
+      scroller: "body",
+      start: "top 85%",
+      end: "top 10%",
+      scrub: 2,
+    },
   });
 }

@@ -1,33 +1,22 @@
 import gsap from "gsap";
-
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function projectsAnimations() {
-  gsap.from(".project-item-right", {
-    x: 300,
-    duration: 0.6,
-    opacity: 0,
-    stagger: 0.6,
-    scrollTrigger: {
-      trigger: ".project-item",
-      scroller: "body",
-      start: "top 90%",
-      scrub: 2,
-    },
-  });
-
-  gsap.from(".project-item-left", {
-    x: -300,
-    duration: 0.6,
-    opacity: 0,
-    stagger: 0.6,
-    scrollTrigger: {
-      trigger: ".project-item",
-      scroller: "body",
-      start: "top 90%",
-      scrub: 2,
-    },
+  gsap.utils.toArray(".project-item").forEach((item: any) => {
+    gsap.from(item, {
+      opacity: 0,
+      y: 50,
+      scale: 0.95,
+      duration: 0.8,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: item,
+        start: "top 85%",
+        end: "top 50%",
+        scrub: true,
+      },
+    });
   });
 }

@@ -127,7 +127,7 @@ const About = () => {
             Want to collaborate or have a cool idea?
           </p>
           <a
-            href="#contact"
+            href="/contact"
             className="inline-block bg-white/20 backdrop-blur-lg mt-4 bg-primary text-white px-6 py-3 rounded-xl ease-in-out duration-300 hover:scale-105 transition"
           >
             Let&apos;s Talk

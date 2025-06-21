@@ -70,13 +70,11 @@ const Projects = () => {
     <section className="py-20 text-white" id="projects">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-16">Projects</h2>
-        <div className="grid gap-14">
-          {projects.map((project, index) => (
+        <div className="grid gap-14 project">
+          {projects.map((project) => (
             <div
               key={project.title}
-              className={`flex project-item ${
-                index % 2 == 0 ? "project-item-left" : "project-item-right"
-              } flex-col md:flex-row items-center gap-8 bg-white/5 rounded-2xl p-6 md:p-10 shadow-xl backdrop-blur-md`}
+              className="flex project-item flex-col md:flex-row items-center gap-8 bg-white/5 rounded-2xl p-6 md:p-10 shadow-xl backdrop-blur-md"
             >
               <img
                 src={project.image}

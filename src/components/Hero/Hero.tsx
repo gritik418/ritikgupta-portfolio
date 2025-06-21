@@ -30,9 +30,25 @@ const Hero = () => {
           <a
             href="/Ritik_Gupta_Resume_2025.pdf"
             target="_blank"
-            className="bg-violet-900 shadow hover:bg-violet-800 transition-colors ease-in-out duration-300 shadow-violet-200/50 cursor-pointer text-white text-xl px-3 py-2 mt-6 rounded-lg"
+            className="group relative inline-flex items-center justify-center bg-white/20 hover:bg-white/30 transition-colors ease-in-out duration-300 shadow-violet-200/50 text-white text-xl px-4 py-2 mt-6 rounded-lg overflow-hidden"
           >
-            View Resume
+            <span className="z-10 flex items-center gap-2">
+              View Resume
+              <svg
+                className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </span>
+            <div className="absolute inset-0 rounded-lg bg-violet-500 opacity-20 blur-lg group-hover:opacity-30 transition duration-300"></div>
           </a>
         </div>
 
