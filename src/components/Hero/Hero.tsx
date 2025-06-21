@@ -10,11 +10,11 @@ const Hero = () => {
     <section className="min-h-screen hero pt-20 flex items-center justify-center px-6">
       <div className="container flex flex-col lg:flex-row gap-4 items-center justify-between">
         <div className="w-full py-30 lg:py-0 lg:w-[50%] min-h-[400px] flex flex-col lg:pr-8 items-center lg:items-start justify-center">
-          <h1 className="text-white text-5xl font-bold tracking-tight">
+          <h1 className="text-white text-3xl sm:text-5xl font-bold tracking-tight">
             👋 Hi, I&apos;m Ritik Gupta
           </h1>
 
-          <p className="text-violet-300 text-base mt-0.5">
+          <p className="text-violet-300 text-xs text-center sm:text-start sm:text-base mt-0.5">
             Full-Stack Developer | Clean Code Enthusiast | UI/UX Focused
           </p>
 
