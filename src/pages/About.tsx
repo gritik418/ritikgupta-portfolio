@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { FaICursor } from "react-icons/fa";
 import Typed from "typed.js";
 
 const About = () => {
@@ -16,11 +15,11 @@ const About = () => {
         "Let&apos;s create something <strong>amazing</strong> together.",
         "Crafting delightful user experiences with performance in mind.",
         "Scaling APIs, optimizing UIs, and pushing pixels to perfection.",
-        "Bridging design & functionality through thoughtful code.",
+        "Bridging design and functionality through thoughtful code.",
         "Code is poetry — and I write it with precision.",
         "Built <strong>Huddle</strong> for social connection. Built <strong>Trove</strong> for commerce.",
         "Every line of code is an opportunity to solve a problem.",
-        "Turning caffeine & curiosity into full-stack products.",
+        "Turning caffeine and curiosity into full-stack products.",
       ],
       typeSpeed: 30,
       smartBackspace: true,
@@ -38,8 +37,8 @@ const About = () => {
     <section className="min-h-screen text-white px-6 pt-36">
       <div className="max-w-5xl mx-auto space-y-16">
         {/* Hero Section */}
-        <div className="text-center space-y-4 px-4">
-          <h1 className="text-4xl md:text-5xl font-bold">About Me</h1>
+        <div className="text-center space-y-4 px-4 pb-10">
+          <h1 className="text-4xl md:text-5xl mb-10 font-bold">About Me</h1>
           <p
             ref={el}
             className="text-2xl inline text-gray-300 max-w-2xl mx-auto"

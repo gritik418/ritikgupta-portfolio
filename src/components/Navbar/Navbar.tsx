@@ -15,16 +15,15 @@ const Navbar = () => {
         />
 
         <ul className="flex items-center gap-8 text-white text-sm font-semibold">
-          <li className="cursor-pointer">
+          <li className="cursor-pointer p-1">
             <a href="/">Home</a>
           </li>
-          <li className="cursor-pointer">
-            <a href="#projects">Projects</a>
-          </li>
-          <li className="cursor-pointer">
+          <li className="cursor-pointer p-1">
             <a href="/about">About</a>
           </li>
-          <li className="cursor-pointer">Contact</li>
+          <li className="cursor-pointer p-1">
+            <a href="/contact">Contact</a>
+          </li>
         </ul>
       </div>
     </nav>
