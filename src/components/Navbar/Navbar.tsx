@@ -7,7 +7,7 @@ const Navbar = () => {
   });
 
   return (
-    <nav className="fixed top-0 w-screen z-50 flex items-center justify-center bg-violet-900/30 backdrop-blur-md shadow-lg">
+    <nav className="fixed top-0 w-screen z-100 flex items-center justify-center bg-violet-900/30 backdrop-blur-md shadow-lg">
       <div className="max-w-7xl container mx-auto px-6 h-20 flex items-center justify-between">
         <img
           src="/logo.png"
@@ -15,9 +15,15 @@ const Navbar = () => {
         />
 
         <ul className="flex items-center gap-8 text-white text-sm font-semibold">
-          <li className="cursor-pointer">Home</li>
-          <li className="cursor-pointer">Projects</li>
-          <li className="cursor-pointer">About</li>
+          <li className="cursor-pointer">
+            <a href="/">Home</a>
+          </li>
+          <li className="cursor-pointer">
+            <a href="#projects">Projects</a>
+          </li>
+          <li className="cursor-pointer">
+            <a href="/about">About</a>
+          </li>
           <li className="cursor-pointer">Contact</li>
         </ul>
       </div>

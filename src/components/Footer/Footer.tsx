@@ -23,7 +23,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-white transition">
+                <a href="/about" className="hover:text-white transition">
                   About
                 </a>
               </li>

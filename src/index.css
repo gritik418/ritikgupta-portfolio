@@ -11,3 +11,7 @@ body {
   color: #111111;
   line-height: 1.6;
 }
+
+.typed-cursor {
+  font-size: 24px;
+}

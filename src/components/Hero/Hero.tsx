@@ -1,5 +1,4 @@
 import { useGSAP } from "@gsap/react";
-import HeroImage from "../../assets/hero-img.png";
 import heroAnimations from "../../animations/heroAnimations";
 
 const Hero = () => {
@@ -40,7 +39,7 @@ const Hero = () => {
         <div className="flex w-full lg:w-[50%] items-center justify-center lg:justify-end min-h-[400px]">
           <img
             className=" h-[500px] shadow-2xl shadow-violet-300 rounded-2xl"
-            src={HeroImage}
+            src="/hero-img.png"
           />
         </div>
       </div>
