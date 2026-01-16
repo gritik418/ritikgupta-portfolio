@@ -1,34 +1,37 @@
+import { useGSAP } from "@gsap/react";
+import { MdApi } from "react-icons/md";
 import {
-  SiReact,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiChakraui,
-  SiTypescript,
-  SiJavascript,
-  SiShadcnui,
+  SiAuth0,
   SiBootstrap,
-  SiNodedotjs,
+  SiChakraui,
+  SiDjango,
+  SiDocker,
   SiExpress,
-  SiPrisma,
-  SiMongodb,
-  SiPostgresql,
-  SiMysql,
-  SiPython,
   SiGit,
   SiGithub,
-  SiDocker,
-  SiVercel,
-  SiRedux,
-  SiJsonwebtokens,
-  SiSocketdotio,
-  SiAuth0,
-  SiNpm,
-  SiGreensock,
-  SiNestjs,
   SiGraphql,
+  SiGreensock,
+  SiJavascript,
+  SiJsonwebtokens,
+  SiMongodb,
+  SiMysql,
+  SiNestjs,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiNpm,
+  SiPostgresql,
+  SiPrisma,
+  SiPython,
+  SiReact,
+  SiRedis,
+  SiRedux,
+  SiShadcnui,
+  SiSocketdotio,
+  SiTailwindcss,
+  SiTypescript,
+  SiVercel,
+  SiZod,
 } from "react-icons/si";
-import { MdApi } from "react-icons/md";
-import { useGSAP } from "@gsap/react";
 import techStackAnimations from "../../animations/techStackAnimations";
 
 const techStack = {
@@ -53,12 +56,15 @@ const techStack = {
     { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-500" /> },
     { name: "MySQL", icon: <SiMysql className="text-blue-600" /> },
     { name: "Python", icon: <SiPython className="text-yellow-300" /> },
+    { name: "Django", icon: <SiDjango className="text-green-600" /> },
   ],
-  "Dev Tools": [
+  "Dev Tools / Infrastructure": [
     { name: "Git", icon: <SiGit className="text-orange-500" /> },
     { name: "GitHub", icon: <SiGithub /> },
     { name: "Docker", icon: <SiDocker className="text-blue-400" /> },
     { name: "Vercel", icon: <SiVercel /> },
+    { name: "Redis", icon: <SiRedis className="text-red-500" /> },
+    { name: "BullMQ", icon: <SiNpm className="text-yellow-400" /> },
   ],
   Extras: [
     { name: "Multer", icon: <SiNpm className="text-red-400" /> },
@@ -67,6 +73,9 @@ const techStack = {
     { name: "JWT", icon: <SiJsonwebtokens /> },
     { name: "OAuth", icon: <SiAuth0 className="text-blue-600" /> },
     { name: "Socket.IO", icon: <SiSocketdotio /> },
+  ],
+  "Validation / Utilities": [
+    { name: "Zod", icon: <SiZod className="text-blue-400" /> },
   ],
 };
 
