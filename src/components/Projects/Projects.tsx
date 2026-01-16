@@ -74,7 +74,7 @@ const Projects = () => {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="flex project-item flex-col md:flex-row items-center gap-8 bg-white/5 rounded-2xl p-6 md:p-10 shadow-xl backdrop-blur-md"
+              className="flex hover:shadow-white/20 transition-shadow ease-in-out duration-600 project-item flex-col md:flex-row items-center gap-8 bg-white/5 rounded-2xl p-6 md:p-10 shadow-xl backdrop-blur-md"
             >
               <img
                 src={project.image}
