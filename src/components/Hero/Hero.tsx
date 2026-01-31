@@ -31,7 +31,7 @@ const Hero = () => {
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} className="relative w-full bg-black">
+        <section ref={containerRef} className="relative w-full bg-transparent">
             {/* Multi-layered Atmosphere */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-violet-900/10 blur-[120px] rounded-full animate-pulse" />
@@ -41,8 +41,8 @@ const Hero = () => {
 
             {/* Main Sticky Container */}
             <div className="hero-container relative w-full h-[350vh]">
-                <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden px-6 md:px-12">
-                    <div className="hero-text-wrapper text-center z-10 max-w-5xl mt-12">
+                <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden px-6 md:px-12 py-20">
+                    <div className="hero-text-wrapper text-center z-10 max-w-5xl flex flex-col items-center justify-center h-full pb-32">
                         <h1 className="hero-title text-[clamp(2.5rem,14vw,10rem)] font-black tracking-tighter mb-8 opacity-0 translate-y-20 leading-[0.8] text-white">
                             CRAFTING<br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-violet-400 bg-300% animate-gradient">DIGITAL</span><br />
@@ -55,10 +55,10 @@ const Hero = () => {
                     </div>
 
                     {/* Fancy Scroll Indicator */}
-                    <div className="scroll-indicator absolute bottom-24 flex flex-col items-center gap-4 opacity-0">
+                    <div className="scroll-indicator absolute bottom-10 md:bottom-16 flex flex-col items-center gap-4 opacity-0 z-20">
                         <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-gray-400">Discover</span>
-                        <div className="relative w-[3px] h-12 bg-white/5 rounded-full overflow-hidden">
-                            <div className="absolute top-0 left-0 w-[8px] h-1/2 bg-gradient-to-b from-transparent via-violet-400 to-transparent animate-scroll-line" />
+                        <div className="relative w-[2px] h-12 bg-white/5 rounded-full overflow-hidden">
+                            <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-transparent via-violet-500 to-transparent animate-scroll-line" />
                         </div>
                     </div>
 
