@@ -36,6 +36,17 @@ const projects = [
     demo: "https://quick-share-teal.vercel.app/",
     color: "from-blue-600/20 to-transparent"
   },
+  {
+    title: "QuickNotes",
+    subtitle: "Secure & Modern Note Taking",
+    description:
+      "A premium, secure note-taking application designed for capturing creative and professional thoughts. Features a sleek UI with smooth transitions and persistent storage.",
+    tech: ["Next.js", "Node.js", "Express", "Tailwind CSS", "MongoDB"],
+    image: "/quicknotes-img.png",
+    github: "https://github.com/gritik418/quicknotes-frontend",
+    demo: "https://quicknotes-frontend-five.vercel.app/login",
+    color: "from-emerald-600/20 to-transparent"
+  },
 ];
 
 const Projects = () => {
@@ -66,7 +77,7 @@ const Projects = () => {
                     <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                        className="w-full h-full !object-contain transform scale-[1.02] hover:scale-115 transition-transform duration-700"
                     />
                 </div>
               </div>
