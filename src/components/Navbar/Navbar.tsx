@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
-import navbarAnimations from "../../animations/navbarAnimations";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import navbarAnimations from "../../animations/navbarAnimations";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -67,7 +67,16 @@ const Navbar = () => {
         </div>
 
         {/* CTA */}
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-4">
+            {/* Theme Toggle */}
+            {/* <button
+              onClick={toggleTheme}
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-white/[0.05] border border-white/[0.1] hover:bg-white/[0.1] transition-all duration-300 text-gray-300 hover:text-white"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? <FaSun className="text-lg" /> : <FaMoon className="text-lg" />}
+            </button> */}
+            
             <Link 
                 to="/contact" 
                 className="hidden lg:inline-flex items-center justify-center text-white font-black text-xs tracking-widest uppercase bg-violet-600 hover:bg-violet-700 !px-8 !py-4 rounded-full transition-all duration-500 shadow-xl shadow-violet-600/30 hover:scale-105 active:scale-95 border border-violet-400/20"

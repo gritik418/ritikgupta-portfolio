@@ -2,10 +2,71 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Playfair+Display:ital,wght@1,700;1,900&display=swap');
 
-:root {
+/* Dark Theme (default) */
+:root,
+.dark {
   --background: #000000;
   --foreground: #ffffff;
   --accent: #8b5cf6;
+  --secondary-bg: #0a0a0a;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --text-muted: #9ca3af;
+}
+
+/* Light Theme */
+.light {
+  --background: #ffffff;
+  --foreground: #000000;
+  --accent: #7c3aed;
+  --secondary-bg: #f9fafb;
+  --card-bg: rgba(0, 0, 0, 0.03);
+  --border-color: rgba(0, 0, 0, 0.1);
+  --text-muted: #6b7280;
+}
+
+.light body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.light section {
+  background-color: var(--background) !important;
+  color: var(--foreground);
+}
+
+/* Light theme specific overrides */
+.light .bg-black {
+  background-color: #ffffff !important;
+}
+
+.light .bg-gradient-to-b {
+  background: linear-gradient(to bottom, #ffffff, #f3f4f6, #ffffff) !important;
+}
+
+.light .text-white {
+  color: #000000 !important;
+}
+
+.light .text-gray-400,
+.light .text-gray-500 {
+  color: #6b7280 !important;
+}
+
+.light .bg-white\/\[0\.03\],
+.light .glass {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light .border-white\/10,
+.light .border-white\/\[0\.05\],
+.light .border-white\/\[0\.1\] {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light .bg-black\/40 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
 }
 
 * {
