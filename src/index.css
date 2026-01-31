@@ -63,6 +63,7 @@ body {
 .text-gradient {
   background: linear-gradient(to right, #ffffff, #a78bfa, #ffffff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% auto;
 }

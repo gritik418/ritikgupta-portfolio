@@ -1,36 +1,23 @@
 import { useGSAP } from "@gsap/react";
-import { MdApi } from "react-icons/md";
 import {
-  SiAuth0,
-  SiBootstrap,
-  SiChakraui,
-  SiDjango,
   SiDocker,
   SiExpress,
   SiGit,
-  SiGithub,
   SiGraphql,
   SiGreensock,
   SiJavascript,
   SiJsonwebtokens,
   SiMongodb,
-  SiMysql,
   SiNestjs,
   SiNextdotjs,
   SiNodedotjs,
-  SiNpm,
   SiPostgresql,
-  SiPrisma,
-  SiPython,
   SiReact,
   SiRedis,
-  SiRedux,
-  SiShadcnui,
   SiSocketdotio,
   SiTailwindcss,
   SiTypescript,
   SiVercel,
-  SiZod,
 } from "react-icons/si";
 import techStackAnimations from "../../animations/techStackAnimations";
 
@@ -67,14 +54,14 @@ const TechStack = () => {
   });
 
   return (
-    <section id="techStack" className="py-24 bg-black text-white">
+    <section id="techStack" className="py-32 bg-black text-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-6">
           <div className="max-w-2xl">
             <h2 className="text-sm uppercase tracking-[0.3em] font-bold text-violet-500 mb-4">Core Capabilities</h2>
-            <h3 className="text-4xl md:text-6xl font-black tracking-tighter">Tools I use to build scalable products.</h3>
+            <h3 className="text-5xl md:text-7xl font-black tracking-tighter">Tools I use to build scalable products.</h3>
           </div>
-          <div className="text-gray-400 md:text-right font-medium max-w-xs">
+          <div className="text-gray-400 md:text-right font-medium max-w-xs text-lg">
             A comprehensive set of modern technologies for end-to-end development.
           </div>
         </div>
