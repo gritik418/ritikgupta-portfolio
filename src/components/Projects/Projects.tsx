@@ -8,7 +8,7 @@ const projects = [
     subtitle: "Real-time Social Platform",
     description:
       "A full-stack social media platform where users can share posts, create channels, and upload stories with real-time updates via WebSockets.",
-    tech: ["Next.js", "Node.js", "Socket.IO", "Chakra UI"],
+    tech: ["Next.js", "Node.js", "TypeScript","MongoDB", "Socket.IO", "Chakra UI"],
     image: "/huddle-img.png",
     github: "https://github.com/gritik418/Huddle",
     demo: "https://huddle-app-silk.vercel.app",
@@ -44,14 +44,14 @@ const Projects = () => {
   });
 
   return (
-    <section className="py-32 bg-black overflow-hidden" id="projects">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-32 bg-black flex gap-8 flex-col items-center !space-y-6 w-full overflow-hidden" id="projects">
+      <div className="max-w-7xl flex flex-col gap-8 w-full mx-auto px-6">
         <div className="mb-24 text-center md:text-left">
           <h2 className="text-sm uppercase tracking-[0.3em] font-bold text-violet-500 mb-4 ml-1">Selection of work</h2>
           <h3 className="text-5xl md:text-7xl font-black tracking-tighter text-white">Featured Projects</h3>
         </div>
 
-        <div className="flex flex-col gap-40">
+        <div className="flex flex-col gap-20">
           {projects.map((project, index) => (
             <div
               key={project.title}
@@ -73,17 +73,17 @@ const Projects = () => {
 
               {/* Text Column */}
               <div className="w-full md:w-[40%] flex flex-col justify-center">
-                <span className="text-violet-500 font-bold tracking-wider text-sm uppercase mb-3">{project.subtitle}</span>
-                <h4 className="text-4xl font-bold text-white mb-6 tracking-tight">{project.title}</h4>
-                <p className="text-gray-400 text-lg leading-relaxed mb-8">
+                <span className="text-violet-500 font-bold tracking-wider text-sm uppercase !mb-3">{project.subtitle}</span>
+                <h4 className="text-4xl font-bold text-white !mb-6 tracking-tight">{project.title}</h4>
+                <p className="text-gray-400 text-lg leading-relaxed !mb-8">
                   {project.description}
                 </p>
                 
-                <div className="flex flex-wrap gap-2 mb-10">
+                <div className="flex flex-wrap gap-2 !mb-10">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="text-xs font-semibold bg-white/5 border border-white/10 px-4 py-1.5 rounded-full text-gray-300"
+                      className="text-xs font-semibold bg-white/5 border border-white/10 !px-4 !py-1.5 rounded-full text-gray-300"
                     >
                       {tech}
                     </span>

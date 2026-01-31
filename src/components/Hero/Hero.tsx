@@ -95,11 +95,11 @@ const Hero = () => {
                         system architecture and delightful user interfaces. Every line of code 
                         is written with purpose and performance in mind.
                     </p>
-                    <div className="flex flex-col sm:flex-row justify-center items-center gap-8">
+                    <div className="flex flex-col sm:flex-row justify-center !mt-8 items-center gap-8">
                         <a 
                             href="/Ritik_Gupta_Resume_2025.pdf" 
                             target="_blank"
-                            className="group relative px-12 py-5 bg-white text-black font-black rounded-full overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95"
+                            className="group relative !px-12 !py-5 bg-white text-black font-black rounded-full overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95"
                         >
                             <span className="relative z-10 uppercase tracking-widest text-xs">View Resume</span>
                             <div className="absolute inset-0 bg-violet-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />

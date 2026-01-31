@@ -72,7 +72,7 @@ const Navbar = () => {
                 to="/contact" 
                 className="hidden lg:inline-flex items-center justify-center text-white font-black text-xs tracking-widest uppercase bg-violet-600 hover:bg-violet-700 !px-8 !py-4 rounded-full transition-all duration-500 shadow-xl shadow-violet-600/30 hover:scale-105 active:scale-95 border border-violet-400/20"
             >
-                Start a Project
+                Let's Connect
             </Link>
             
             <button className="md:hidden text-gray-400 hover:text-white transition-colors p-2">

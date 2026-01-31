@@ -7,9 +7,10 @@ const Home = () => {
   return (
     <div className="flex flex-col gap-0 overflow-hidden">
       <Hero />
-      <div className="relative z-10 bg-black">
+      <div className="relative flex flex-col !pb-16 z-10 bg-black">
         <StringElement />
         <TechStack />
+        <div className="h-32"></div>
         <Projects />
       </div>
     </div>
