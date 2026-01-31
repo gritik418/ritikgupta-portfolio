@@ -83,14 +83,14 @@ const Hero = () => {
             </div>
 
             {/* Bio Section */}
-            <div className="bio-section relative min-h-screen flex items-center justify-center px-6 py-40 border-t border-white/5 bg-black z-10">
+            <div className="bio-section !px-2 relative md:min-h-screen flex items-center justify-center sm:!px-6 !py-24 md:!py-40 border-t border-white/5 bg-black z-10">
                 <div className="max-w-4xl mx-auto text-center z-10">
-                    <h2 className="text-xs uppercase tracking-[0.5em] font-bold text-violet-500 mb-10">Agility Meets Craft</h2>
-                    <h3 className="text-3xl md:text-7xl font-bold mb-12 tracking-tight text-white leading-tight">
+                    <h2 className="text-xs uppercase tracking-[0.5em] font-bold text-violet-500 mb-8 md:mb-10">Agility Meets Craft</h2>
+                    <h3 className="text-4xl md:text-7xl font-bold mb-8 md:mb-12 tracking-tight text-white leading-tight">
                         I build solutions that <br className="hidden md:block" />
                         <span className="italic font-serif text-violet-400">resonate</span> and scale.
                     </h3>
-                    <p ref={bioTextRef} className="text-lg md:text-3xl text-gray-400 leading-relaxed mb-16 font-light">
+                    <p ref={bioTextRef} className="text-lg md:text-3xl text-gray-400 leading-relaxed mb-10 md:mb-16 font-light">
                         Specializing in the modern web stack, I bridge the gap between complex 
                         system architecture and delightful user interfaces. Every line of code 
                         is written with purpose and performance in mind.

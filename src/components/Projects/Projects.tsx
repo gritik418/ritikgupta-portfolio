@@ -44,20 +44,20 @@ const Projects = () => {
   });
 
   return (
-    <section className="py-32 bg-black flex gap-8 flex-col items-center !space-y-6 w-full overflow-hidden" id="projects">
+    <section className="py-20 md:py-32 !pt-20 !px-2 sm:!px-0 bg-black flex gap-8 flex-col items-center !space-y-6 w-full overflow-hidden" id="projects">
       <div className="max-w-7xl flex flex-col gap-8 w-full mx-auto px-6">
-        <div className="mb-24 text-center md:text-left">
+        <div className="mb-16 md:mb-24 text-center md:text-left">
           <h2 className="text-sm uppercase tracking-[0.3em] font-bold text-violet-500 mb-4 ml-1">Selection of work</h2>
-          <h3 className="text-5xl md:text-7xl font-black tracking-tighter text-white">Featured Projects</h3>
+          <h3 className="text-4xl md:text-7xl font-black tracking-tighter text-white">Featured Projects</h3>
         </div>
 
-        <div className="flex flex-col gap-20">
+        <div className="flex flex-col gap-16 md:gap-32">
           {projects.map((project, index) => (
             <div
               key={project.title}
               className={`project-item flex flex-col ${
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              } items-center gap-12 md:gap-20 group`}
+              } items-center gap-10 md:gap-20 group`}
             >
               {/* Image Column */}
               <div className="w-full md:w-[60%] relative">
@@ -74,7 +74,7 @@ const Projects = () => {
               {/* Text Column */}
               <div className="w-full md:w-[40%] flex flex-col justify-center">
                 <span className="text-violet-500 font-bold tracking-wider text-sm uppercase !mb-3">{project.subtitle}</span>
-                <h4 className="text-4xl font-bold text-white !mb-6 tracking-tight">{project.title}</h4>
+                <h4 className="text-3xl md:text-4xl font-bold text-white !mb-6 tracking-tight">{project.title}</h4>
                 <p className="text-gray-400 text-lg leading-relaxed !mb-8">
                   {project.description}
                 </p>

@@ -97,12 +97,12 @@ const TechStack = () => {
   });
 
   return (
-    <section id="techStack" className="py-32 flex gap-8 flex-col items-center !space-y-6 w-full bg-black text-white">
+    <section id="techStack" className="!px-2 py-20 md:!py-32 flex gap-8 flex-col items-center !space-y-6 w-full bg-black text-white">
       <div className="max-w-7xl flex flex-col gap-8 w-full mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end w-full justify-between mb-24 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end w-full justify-between mb-16 md:mb-24 gap-6">
           <div className="max-w-2xl">
             <h2 className="text-sm uppercase tracking-[0.3em] font-bold text-violet-500 mb-4">Core Capabilities</h2>
-            <h3 className="text-5xl md:text-7xl font-black tracking-tighter">Tools I use to build scalable products.</h3>
+            <h3 className="text-4xl md:text-7xl font-black tracking-tighter">Tools I use to build scalable products.</h3>
           </div>
           <div className="text-gray-400 md:text-right font-medium max-w-xs text-lg">
             A comprehensive set of modern technologies for end-to-end development.
@@ -113,7 +113,7 @@ const TechStack = () => {
           {Object.entries(techStack).map(([category, items]) => (
             <div 
                 key={category} 
-                className="group relative !p-8 rounded-3xl bg-white/[0.02] border border-white/10 hover:shadow-[0_0_20px_rgba(168,85,247,0.7)] transition-all duration-500"
+                className="group relative !p-5 md:!p-8 rounded-3xl bg-white/[0.02] border border-white/10 hover:shadow-[0_0_20px_rgba(168,85,247,0.7)] transition-all duration-500"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-violet-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
               
@@ -124,16 +124,16 @@ const TechStack = () => {
                 <div className="w-12 h-1 bg-violet-500 rounded-full mt-4 group-hover:w-24 transition-all duration-500" />
               </div>
               
-              <div className="flex flex-wrap justify-center gap-6 relative">
+              <div className="flex flex-wrap justify-center gap-3 md:gap-6 relative">
                 {items.map(({ name, icon }) => (
                   <div
                     key={name}
-                    className="flex flex-col items-center gap-3 group/icon w-20"
+                    className="flex flex-col items-center gap-3 group/icon w-16 md:w-20"
                   >
                     <div className="text-3xl filter grayscale group-hover/icon:grayscale-0 transition-all duration-300 transform group-hover/icon:scale-110">
                       {icon}
                     </div>
-                    <p className="text-[10px] uppercase tracking-widest font-bold text-center text-gray-500 group-hover/icon:text-violet-400 transition-colors">
+                    <p className="text-[9px] md:text-[10px] uppercase tracking-widest font-bold text-center text-gray-500 group-hover/icon:text-violet-400 transition-colors">
                       {name}
                     </p>
                   </div>

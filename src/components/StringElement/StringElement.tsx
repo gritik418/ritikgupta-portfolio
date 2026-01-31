@@ -46,8 +46,8 @@ const StringElement = () => {
   });
 
   return (
-    <div className="py-20 opacity-30 select-none">
-      <div ref={containerRef} className="max-w-7xl mx-auto px-6 h-[100px] cursor-pointer">
+    <div className="!py-0 opacity-30 select-none flex items-center justify-center">
+      <div ref={containerRef} className="max-w-7xl w-full mx-auto px-6 h-[100px] cursor-pointer">
         <svg
           width="100%"
           height="100%"
@@ -59,7 +59,7 @@ const StringElement = () => {
             ref={pathRef}
             d="M 0 50 Q 50 50 100 50"
             stroke="white"
-            strokeWidth="0.5"
+            strokeWidth="0.9"
             fill="transparent"
           />
         </svg>
