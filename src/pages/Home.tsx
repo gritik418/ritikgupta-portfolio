@@ -13,6 +13,7 @@ const Home = () => {
       <div className="relative flex flex-col !pb-16 z-10 bg-black">
         <StringElement />
         <TechStack />
+        <div className="h-16 lg:hidden"></div>
         <Experience />
         <div className="h-32"></div>
         <Projects />

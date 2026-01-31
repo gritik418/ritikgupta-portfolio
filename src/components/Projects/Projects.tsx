@@ -55,7 +55,7 @@ const Projects = () => {
   });
 
   return (
-    <section className="py-20 md:py-32 !pt-20 !px-2 sm:!px-0 bg-black flex gap-8 flex-col items-center !space-y-6 w-full overflow-hidden" id="projects">
+    <section className="py-20 md:py-32 !pt-20 !px-6 bg-black flex gap-8 flex-col items-center !space-y-6 w-full overflow-hidden" id="projects">
       <div className="max-w-7xl flex flex-col gap-8 w-full mx-auto px-6">
         <div className="mb-16 md:mb-24 text-center md:text-left">
           <h2 className="text-sm uppercase tracking-[0.3em] font-bold text-violet-500 mb-4 ml-1">Selection of work</h2>

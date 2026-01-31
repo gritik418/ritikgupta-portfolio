@@ -64,7 +64,7 @@ const Experience = () => {
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} id="experience" className="relative w-full flex flex-col items-center justify-center py-32 bg-black text-white px-6">
+        <section ref={containerRef} id="experience" className="relative w-full flex flex-col items-center justify-center py-32 bg-black text-white !px-6">
             <div className="max-w-7xl w-full mx-auto flex flex-col md:flex-row !gap-16 md:!gap-24">
                 
                 {/* Header / Sidebar */}

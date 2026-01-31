@@ -97,7 +97,7 @@ const TechStack = () => {
   });
 
   return (
-    <section id="techStack" className="!px-2 py-20 md:!py-32 flex gap-8 flex-col items-center !space-y-6 w-full bg-black text-white">
+    <section id="techStack" className="!px-6 py-20 md:!py-32 flex gap-8 flex-col items-center !space-y-6 w-full bg-black text-white">
       <div className="max-w-7xl flex flex-col gap-8 w-full mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end w-full justify-between mb-16 md:mb-24 gap-6">
           <div className="max-w-2xl">
