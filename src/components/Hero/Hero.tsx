@@ -1,66 +1,92 @@
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import heroAnimations from "../../animations/heroAnimations";
+import { useRef } from "react";
+
+// Register ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
-  useGSAP(() => {
-    heroAnimations();
-  });
+    const containerRef = useRef<HTMLDivElement>(null);
 
-  return (
-    <section className="min-h-screen hero pt-20 flex items-center justify-center px-6">
-      <div className="container flex flex-col lg:flex-row gap-4 items-center justify-between">
-        <div className="w-full py-30 lg:py-0 lg:w-[50%] min-h-[400px] flex flex-col lg:pr-8 items-center lg:items-start justify-center">
-          <h1 className="text-white text-3xl sm:text-5xl font-bold tracking-tight">
-            👋 Hi, I&apos;m Ritik Gupta
-          </h1>
+    useGSAP(() => {
+        heroAnimations();
+    }, { scope: containerRef });
 
-          <p className="text-violet-300 text-xs text-center sm:text-start sm:text-base mt-0.5">
-            Full-Stack Developer | Clean Code Enthusiast | UI/UX Focused
-          </p>
+    return (
+        <section ref={containerRef} className="relative w-full">
+            {/* Main Sticky Container */}
+            <div className="hero-container relative w-full h-[400vh]">
+                {/* Scene 1: Introduction */}
+                <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden px-6">
+                    <div className="hero-text-wrapper text-center z-10">
+                        <h1 className="hero-title text-6xl md:text-8xl font-black tracking-tighter mb-4 opacity-0">
+                            CRAFTING <span className="text-violet-500">DIGITAL</span><br />
+                            EXPERIENCES
+                        </h1>
+                        <p className="hero-subtitle text-xl md:text-2xl text-gray-400 font-medium max-w-2xl mx-auto opacity-0">
+                            Full-stack developer focused on building high-performance 
+                            applications with stunning user interfaces.
+                        </p>
+                    </div>
 
-          <p className="text-gray-300 text-center lg:text-start text-xl leading-relaxed mt-6">
-            Full-stack developer skilled in building performant, scalable, and
-            user-centric web applications. Experienced with modern technologies
-            like React, Next.js, Node.js, and MongoDB, with a strong focus on
-            clean code, maintainable architecture, and intuitive UI/UX.
-            Passionate about turning ideas into meaningful digital products that
-            deliver real value.
-          </p>
+                    {/* Scroll Indicator */}
+                    <div className="scroll-indicator absolute bottom-10 flex flex-col items-center gap-2 opacity-0">
+                        <span className="text-sm font-light text-gray-500">Scroll to explore</span>
+                        <div className="w-[1px] h-12 bg-gradient-to-b from-violet-500 to-transparent"></div>
+                    </div>
 
-          <a
-            href="/Ritik_Gupta_Resume_2025.pdf"
-            target="_blank"
-            className="group relative inline-flex items-center justify-center bg-white/20 hover:bg-white/30 transition-colors ease-in-out duration-300 shadow-violet-200/50 text-white text-xl px-4 py-2 mt-6 rounded-lg overflow-hidden"
-          >
-            <span className="z-10 flex items-center gap-2">
-              View Resume
-              <svg
-                className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </span>
-            <div className="absolute inset-0 rounded-lg bg-violet-500 opacity-20 blur-lg group-hover:opacity-30 transition duration-300"></div>
-          </a>
-        </div>
+                    {/* Project Reveal Images (Hidden initially, reveal as sticky) */}
+                    <div className="project-preview-container absolute inset-0 pointer-events-none">
+                        <img 
+                            src="/huddle-img.png" 
+                            alt="Project 1" 
+                            className="project-preview project-1 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] md:w-[60%] rounded-2xl shadow-2xl opacity-0 scale-50 rotate-6"
+                        />
+                        <img 
+                            src="/iNotes-img.png" 
+                            alt="Project 2" 
+                            className="project-preview project-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] md:w-[60%] rounded-2xl shadow-2xl opacity-0 scale-50 -rotate-3"
+                        />
+                        <img 
+                            src="/QuickShare-img.png" 
+                            alt="Project 3" 
+                            className="project-preview project-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] md:w-[60%] rounded-2xl shadow-2xl opacity-0 scale-50 rotate-2"
+                        />
+                    </div>
+                </div>
+            </div>
 
-        <div className="flex w-full lg:w-[50%] items-center justify-center lg:justify-end min-h-[400px]">
-          <img
-            className=" h-[500px] shadow-2xl shadow-violet-300 rounded-2xl"
-            src="/hero-img.png"
-          />
-        </div>
-      </div>
-    </section>
-  );
+            {/* Transition to next section - Bio/About */}
+            <div className="bio-section min-h-screen flex items-center justify-center px-6 py-20 bg-black">
+                <div className="max-w-4xl mx-auto text-center">
+                    <h2 className="text-4xl md:text-6xl font-bold mb-8">Hi, I'm Ritik Gupta</h2>
+                    <p className="text-xl md:text-2xl text-gray-400 leading-relaxed mb-10">
+                        I'm a Full-Stack Developer based in India, specializing in building
+                        clean, scalable, and user-centric web applications.
+                        With a deep passion for UI/UX and performance, I turn complex
+                        requirements into seamless digital products.
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-4">
+                        <a 
+                            href="/Ritik_Gupta_Resume_2025.pdf" 
+                            target="_blank"
+                            className="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-violet-500 hover:text-white transition-all duration-300 transform hover:scale-105"
+                        >
+                            View Resume
+                        </a>
+                        <a 
+                            href="#contact"
+                            className="px-8 py-4 border border-white/20 font-bold rounded-full hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
+                        >
+                            Let's Talk
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default Hero;
