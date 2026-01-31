@@ -4,14 +4,9 @@ import Footer from "../Footer/Footer";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div
-      style={{
-        backgroundImage:
-          "linear-gradient(115deg, #0b669e, #090249, #1a001f, #310d31, #6e0c67, #34046b, #000000)",
-      }}
-    >
+    <div className="bg-black min-h-screen selection:bg-violet-500/30">
       <Navbar />
-      <div>{children}</div>
+      <main>{children}</main>
       <Footer />
     </div>
   );
