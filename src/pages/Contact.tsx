@@ -35,7 +35,7 @@ const Contact = () => {
       });
   };
   return (
-    <section className="min-h-screen text-white px-6 pt-36 pb-20">
+    <section className="min-h-screen text-white px-6 pt-40 md:pt-48 pb-20 relative z-10">
       <div className="max-w-5xl mx-auto space-y-16">
         <div className="text-center space-y-4">
           <h1 className="text-4xl md:text-5xl font-bold">Get in Touch</h1>

@@ -34,7 +34,7 @@ const About = () => {
     };
   }, []);
   return (
-    <section className="min-h-screen text-white px-6 pt-36">
+    <section className="min-h-screen text-white px-6 pt-40 md:pt-48 relative z-10">
       <div className="max-w-5xl mx-auto space-y-16">
         {/* Hero Section */}
         <div className="text-center space-y-4 px-4 pb-10">
