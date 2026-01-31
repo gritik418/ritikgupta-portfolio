@@ -10,20 +10,20 @@ export default function heroAnimations() {
     introTl.to(".hero-title", {
         opacity: 1,
         y: 0,
-        duration: 1.2,
-        ease: "power4.out",
-        delay: 0.2
+        duration: 1.5,
+        ease: "expo.out",
+        delay: 0.5
     })
     .to(".hero-subtitle", {
         opacity: 1,
         y: 0,
-        duration: 1,
+        duration: 1.2,
         ease: "power3.out"
-    }, "-=0.8")
+    }, "-=1")
     .to(".scroll-indicator", {
         opacity: 1,
         duration: 1
-    }, "-=0.5");
+    }, "-=0.8");
 
     // 2. Scroll-driven Project Reveal
     const scrollTl = gsap.timeline({
@@ -31,16 +31,17 @@ export default function heroAnimations() {
             trigger: ".hero-container",
             start: "top top",
             end: "bottom bottom",
-            scrub: 1.5, // Smooth scrubbing
-            pin: true,  // Pin the container
+            scrub: 1.5,
+            pin: true,
         }
     });
 
-    // Fade out main text
+    // Fade and Scale out Title
     scrollTl.to(".hero-text-wrapper", {
-        scale: 0.8,
+        scale: 0.7,
         opacity: 0,
-        duration: 2,
+        y: -100,
+        duration: 4,
         ease: "power2.inOut"
     });
 
@@ -49,47 +50,46 @@ export default function heroAnimations() {
         opacity: 1,
         scale: 1,
         rotate: 0,
-        duration: 3,
+        duration: 5,
         ease: "power2.out"
-    }, "-=1");
+    }, "-=2.5");
 
-    // Reveal Project 2
+    // Exit Project 1 & Reveal Project 2
     scrollTl.to(".project-1", {
-        opacity: 0.5,
-        scale: 0.9,
-        y: -100,
-        duration: 2
+        opacity: 0,
+        scale: 1.1,
+        y: -150,
+        duration: 4
     }, "+=1");
     
     scrollTl.to(".project-2", {
         opacity: 1,
         scale: 1,
         rotate: 0,
-        duration: 3,
+        duration: 5,
         ease: "power2.out"
-    }, "-=2");
+    }, "-=4");
 
-    // Reveal Project 3
+    // Exit Project 2 & Reveal Project 3
     scrollTl.to(".project-2", {
-        opacity: 0.5,
-        scale: 0.9,
-        y: -100,
-        duration: 2
+        opacity: 0,
+        scale: 1.1,
+        y: -150,
+        duration: 4
     }, "+=1");
 
     scrollTl.to(".project-3", {
         opacity: 1,
         scale: 1,
         rotate: 0,
-        duration: 3,
+        duration: 5,
         ease: "power2.out"
-    }, "-=2");
+    }, "-=4");
 
-    // Final cluster lift
-    scrollTl.to(".project-preview", {
-        y: -200,
+    // Final Fade
+    scrollTl.to(".project-3", {
         opacity: 0,
-        stagger: 0.1,
+        scale: 0.9,
         duration: 3
     }, "+=1");
 }

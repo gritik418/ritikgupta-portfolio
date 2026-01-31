@@ -5,59 +5,36 @@ import projectsAnimations from "../../animations/projectsAnimations";
 const projects = [
   {
     title: "Huddle",
+    subtitle: "Real-time Social Platform",
     description:
-      "A full-stack social media platform where users can share posts, create channels, and upload stories with real-time updates.",
-    features: [
-      "Next.js + Express.js + MongoDB",
-      "JWT Authentication, Multer File Uploads",
-      "Real-time chatting via WebSockets",
-      "Clean responsive UI using Chakra UI + Tailwind CSS",
-    ],
-    tech: [
-      "Next.js",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "JWT",
-      "Multer",
-      "Socket.IO",
-      "RTK Query",
-      "Chakra UI",
-      "Tailwind CSS",
-    ],
-
+      "A full-stack social media platform where users can share posts, create channels, and upload stories with real-time updates via WebSockets.",
+    tech: ["Next.js", "Node.js", "Socket.IO", "Chakra UI"],
     image: "/huddle-img.png",
     github: "https://github.com/gritik418/Huddle",
     demo: "https://huddle-app-silk.vercel.app",
+    color: "from-violet-600/20 to-transparent"
   },
   {
     title: "iNotes",
+    subtitle: "Cloud Productivity",
     description:
-      "A cloud-based note-taking web app built with Next.js, allowing users to create, edit, and manage notes securely with a clean and fast UI.",
-    features: [
-      "Next.js + MongoDB stack",
-      "JWT-based authentication for secure access",
-      "Full CRUD functionality for notes",
-      "Clean and responsive UI with Tailwind CSS",
-    ],
+      "A secure, cloud-based note-taking web app allowing users to manage their daily tasks and thoughts with a lightning-fast UI.",
     tech: ["Next.js", "MongoDB", "JWT", "Tailwind CSS"],
     image: "/iNotes-img.png",
     github: "https://github.com/gritik418/iNotes",
     demo: "https://inotes-flame.vercel.app/",
+    color: "from-fuchsia-600/20 to-transparent"
   },
   {
     title: "QuickShare",
+    subtitle: "Instant File Sharing",
     description:
-      "A fast and minimal file-sharing platform built with Next.js, enabling users to instantly share files, images, videos, and audio.",
-    features: [
-      "Built with Next.js and Node.js",
-      "Supports uploading and downloading of files including images, videos, audio (MP3), and documents",
-      "Clean and responsive UI",
-    ],
-    tech: ["Next.js", "Node.js", "Express", "Multer", "Tailwind CSS"],
+      "A minimal file-sharing platform enabling users to instantly share documents, media, and more with auto-expiring links.",
+    tech: ["Next.js", "Express", "Multer", "Tailwind CSS"],
     image: "/QuickShare-img.png",
     github: "https://github.com/gritik418/Quick-Share",
     demo: "https://quick-share-teal.vercel.app/",
+    color: "from-blue-600/20 to-transparent"
   },
 ];
 
@@ -67,52 +44,66 @@ const Projects = () => {
   });
 
   return (
-    <section className="py-20 text-white" id="projects">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-16">Projects</h2>
-        <div className="grid gap-14 project">
-          {projects.map((project) => (
+    <section className="py-32 bg-black overflow-hidden" id="projects">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="mb-24 text-center md:text-left">
+          <h2 className="text-sm uppercase tracking-[0.3em] font-bold text-violet-500 mb-4 ml-1">Selection of work</h2>
+          <h3 className="text-5xl md:text-7xl font-black tracking-tighter text-white">Featured Projects</h3>
+        </div>
+
+        <div className="flex flex-col gap-40">
+          {projects.map((project, index) => (
             <div
               key={project.title}
-              className="flex hover:shadow-white/20 transition-shadow ease-in-out duration-600 project-item flex-col md:flex-row items-center gap-8 bg-white/5 rounded-2xl p-6 md:p-10 shadow-xl backdrop-blur-md"
+              className={`project-item flex flex-col ${
+                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              } items-center gap-12 md:gap-20 group`}
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full md:w-1/2 rounded-xl object-cover"
-              />
-              <div className="w-full md:w-1/2">
-                <h3 className="text-2xl font-semibold">{project.title}</h3>
-                <p className="text-gray-300 mt-3">{project.description}</p>
-                <ul className="mt-4 list-disc list-inside text-sm text-gray-400">
-                  {project.features.map((feature) => (
-                    <li key={feature}>{feature}</li>
-                  ))}
-                </ul>
-                <div className="flex flex-wrap gap-2 mt-4">
+              {/* Image Column */}
+              <div className="w-full md:w-[60%] relative">
+                <div className={`absolute -inset-4 bg-gradient-to-br ${project.color} rounded-[2rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
+                <div className="relative overflow-hidden rounded-2xl border border-white/10 aspect-video">
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    />
+                </div>
+              </div>
+
+              {/* Text Column */}
+              <div className="w-full md:w-[40%] flex flex-col justify-center">
+                <span className="text-violet-500 font-bold tracking-wider text-sm uppercase mb-3">{project.subtitle}</span>
+                <h4 className="text-4xl font-bold text-white mb-6 tracking-tight">{project.title}</h4>
+                <p className="text-gray-400 text-lg leading-relaxed mb-8">
+                  {project.description}
+                </p>
+                
+                <div className="flex flex-wrap gap-2 mb-10">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="text-xs bg-white/10 px-3 py-1 rounded-full text-white/80"
+                      className="text-xs font-semibold bg-white/5 border border-white/10 px-4 py-1.5 rounded-full text-gray-300"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="flex gap-4 mt-5">
+
+                <div className="flex gap-6">
                   <a
                     href={project.github}
                     target="_blank"
-                    className="flex items-center gap-2 text-sm hover:underline"
+                    className="flex items-center gap-2 text-white font-bold hover:text-violet-400 transition-colors"
                   >
-                    <FaGithub /> Code
+                    <FaGithub className="text-xl" /> <span>GitHub</span>
                   </a>
                   <a
                     href={project.demo}
                     target="_blank"
-                    className="flex items-center gap-2 text-sm hover:underline"
+                    className="flex items-center gap-2 text-white font-bold hover:text-violet-400 transition-colors"
                   >
-                    <FaExternalLinkAlt /> Live
+                    <FaExternalLinkAlt className="text-lg" /> <span>Live Demo</span>
                   </a>
                 </div>
               </div>

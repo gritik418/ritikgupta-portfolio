@@ -5,11 +5,13 @@ import TechStack from "../components/TechStack/TechStack";
 
 const Home = () => {
   return (
-    <div className="min-h-screen">
+    <div className="flex flex-col gap-0 overflow-hidden">
       <Hero />
-      <StringElement />
-      <TechStack />
-      <Projects />
+      <div className="relative z-10 bg-black">
+        <StringElement />
+        <TechStack />
+        <Projects />
+      </div>
     </div>
   );
 };

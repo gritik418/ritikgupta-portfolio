@@ -21,8 +21,8 @@ const StringElement = () => {
 
       gsap.to(path, {
         attr: { d },
-        duration: 0.4,
-        ease: "elastic.out(1, 0.3)",
+        duration: 0.6,
+        ease: "power2.out",
         overwrite: "auto",
       });
     };
@@ -30,11 +30,12 @@ const StringElement = () => {
     const handleMouseLeave = () => {
       gsap.to(path, {
         attr: { d: "M 0 50 Q 50 50 100 50" },
-        duration: 0.5,
+        duration: 1.2,
         overwrite: "auto",
-        ease: "elastic.out(1, 0.3)",
+        ease: "elastic.out(1.2, 0.4)",
       });
     };
+    
     container.addEventListener("mousemove", handleMouseMove);
     container.addEventListener("mouseleave", handleMouseLeave);
 
@@ -45,19 +46,20 @@ const StringElement = () => {
   });
 
   return (
-    <div className="flex items-center justify-center">
-      <div ref={containerRef} className="container">
+    <div className="py-20 opacity-30 select-none">
+      <div ref={containerRef} className="max-w-7xl mx-auto px-6 h-[100px] cursor-pointer">
         <svg
           width="100%"
-          height="200px"
+          height="100%"
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
+          className="pointer-events-none"
         >
           <path
             ref={pathRef}
             d="M 0 50 Q 50 50 100 50"
-            stroke="#c4b4ff"
-            stroke-width="1px"
+            stroke="white"
+            strokeWidth="0.5"
             fill="transparent"
           />
         </svg>

@@ -41,9 +41,6 @@ const techStack = {
     { name: "React", icon: <SiReact className="text-cyan-400" /> },
     { name: "Next.js", icon: <SiNextdotjs /> },
     { name: "Tailwind CSS", icon: <SiTailwindcss className="text-teal-300" /> },
-    { name: "Chakra UI", icon: <SiChakraui className="text-teal-400" /> },
-    { name: "shadcn/ui", icon: <SiShadcnui /> },
-    { name: "Bootstrap", icon: <SiBootstrap className="text-purple-400" /> },
     { name: "GSAP", icon: <SiGreensock className="text-green-400" /> },
   ],
   Backend: [
@@ -51,31 +48,16 @@ const techStack = {
     { name: "Express.js", icon: <SiExpress /> },
     { name: "NestJS", icon: <SiNestjs className="text-red-500" /> },
     { name: "GraphQL", icon: <SiGraphql className="text-pink-500" /> },
-    { name: "Prisma", icon: <SiPrisma className="text-white" /> },
-    { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
     { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-500" /> },
-    { name: "MySQL", icon: <SiMysql className="text-blue-600" /> },
-    { name: "Python", icon: <SiPython className="text-yellow-300" /> },
-    { name: "Django", icon: <SiDjango className="text-green-600" /> },
+    { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
   ],
-  "Dev Tools / Infrastructure": [
+  Infrastructure: [
     { name: "Git", icon: <SiGit className="text-orange-500" /> },
-    { name: "GitHub", icon: <SiGithub /> },
     { name: "Docker", icon: <SiDocker className="text-blue-400" /> },
     { name: "Vercel", icon: <SiVercel /> },
     { name: "Redis", icon: <SiRedis className="text-red-500" /> },
-    { name: "BullMQ", icon: <SiNpm className="text-yellow-400" /> },
-  ],
-  Extras: [
-    { name: "Multer", icon: <SiNpm className="text-red-400" /> },
-    { name: "RTK Query", icon: <SiRedux className="text-purple-400" /> },
-    { name: "REST API", icon: <MdApi className="text-orange-300" /> },
-    { name: "JWT", icon: <SiJsonwebtokens /> },
-    { name: "OAuth", icon: <SiAuth0 className="text-blue-600" /> },
     { name: "Socket.IO", icon: <SiSocketdotio /> },
-  ],
-  "Validation / Utilities": [
-    { name: "Zod", icon: <SiZod className="text-blue-400" /> },
+    { name: "JWT", icon: <SiJsonwebtokens /> },
   ],
 };
 
@@ -85,24 +67,38 @@ const TechStack = () => {
   });
 
   return (
-    <section id="techStack" className="pb-16 text-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-12">Tech Stack</h2>
-        <div className="grid gap-12">
+    <section id="techStack" className="py-24 bg-black text-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div className="max-w-2xl">
+            <h2 className="text-sm uppercase tracking-[0.3em] font-bold text-violet-500 mb-4">Core Capabilities</h2>
+            <h3 className="text-4xl md:text-6xl font-black tracking-tighter">Tools I use to build scalable products.</h3>
+          </div>
+          <div className="text-gray-400 md:text-right font-medium max-w-xs">
+            A comprehensive set of modern technologies for end-to-end development.
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {Object.entries(techStack).map(([category, items]) => (
-            <div key={category}>
-              <h3 className="text-2xl font-semibold mb-6">{category}</h3>
-              <div className="flex techItem flex-wrap gap-6">
+            <div 
+                key={category} 
+                className="group relative p-8 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-violet-500/30 transition-all duration-500"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-violet-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+              
+              <h3 className="text-xl font-bold mb-8 tracking-tight text-white/90">{category}</h3>
+              
+              <div className="grid grid-cols-3 gap-6 relative">
                 {items.map(({ name, icon }) => (
                   <div
                     key={name}
-                    title={name}
-                    className="group w-24 h-24 flex flex-col items-center justify-center bg-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/20 transition duration-300 ease-in-out shadow-md"
+                    className="flex flex-col items-center gap-3 group/icon"
                   >
-                    <div className="text-3xl group-hover:scale-110 transition">
+                    <div className="text-3xl filter grayscale group-hover/icon:grayscale-0 transition-all duration-300 transform group-hover/icon:scale-110">
                       {icon}
                     </div>
-                    <p className="mt-2 text-sm font-semibold text-center text-gray-300 group-hover:text-white">
+                    <p className="text-[10px] uppercase tracking-widest font-bold text-gray-500 group-hover/icon:text-violet-400 transition-colors">
                       {name}
                     </p>
                   </div>
