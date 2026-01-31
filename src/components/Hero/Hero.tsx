@@ -40,7 +40,7 @@ const Hero = () => {
             </div>
 
             {/* Main Sticky Container */}
-            <div className="hero-container relative w-full h-[350vh]">
+            <div className="hero-container relative w-full h-[250vh]">
                 <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden px-6 md:px-12 py-20">
                     <div className="hero-text-wrapper text-center z-10 max-w-5xl flex flex-col items-center justify-center h-full pb-32">
                         <h1 className="hero-title text-[clamp(2.5rem,14vw,10rem)] font-black tracking-tighter mb-8 opacity-0 translate-y-20 leading-[0.8] text-white">
