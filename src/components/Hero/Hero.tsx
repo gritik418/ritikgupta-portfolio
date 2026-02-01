@@ -1,8 +1,8 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import heroAnimations from "../../animations/heroAnimations";
 import { useRef } from "react";
+import heroAnimations from "../../animations/heroAnimations";
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
