@@ -81,6 +81,41 @@ const BioSection = () => {
           "-=0.4",
         );
 
+      // 4. Magnetic Effect for Resume Button
+      const mBtn = bioTextRef.current?.querySelector(".magnetic-btn");
+      if (mBtn) {
+        const handleMagneticMove = (e: MouseEvent) => {
+          const rect = mBtn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+
+          gsap.to(mBtn, {
+            x: x * 0.35,
+            y: y * 0.35,
+            duration: 0.5,
+            ease: "power2.out",
+          });
+        };
+
+        const handleMagneticLeave = () => {
+          gsap.to(mBtn, {
+            x: 0,
+            y: 0,
+            duration: 0.6,
+            ease: "elastic.out(1, 0.3)",
+          });
+        };
+
+        mBtn.addEventListener("mousemove", handleMagneticMove as any);
+        mBtn.addEventListener("mouseleave", handleMagneticLeave);
+
+        return () => {
+          window.removeEventListener("mousemove", handleMouseMove);
+          mBtn.removeEventListener("mousemove", handleMagneticMove as any);
+          mBtn.removeEventListener("mouseleave", handleMagneticLeave);
+        };
+      }
+
       return () => {
         window.removeEventListener("mousemove", handleMouseMove);
       };
@@ -187,37 +222,39 @@ const BioSection = () => {
           </div>
         </div>
 
-        <div className="flex justify-center mt-8! items-center">
+        <div className="flex justify-center mt-12! items-center">
           <a
             href="/Ritik_Gupta_Resume_2025.pdf"
             target="_blank"
-            className="group relative inline-flex items-center justify-center px-10! py-5! overflow-hidden rounded-2xl font-semibold uppercase tracking-widest text-sm text-white transition-all duration-300 active:scale-95"
+            className="magnetic-btn group relative inline-flex items-center justify-center px-12! py-6! overflow-hidden rounded-2xl font-bold uppercase tracking-[0.2em] text-xs text-white bg-white/5 backdrop-blur-xl border border-white/10 transition-all duration-300 active:scale-95 shadow-[0_0_40px_-15px_rgba(139,92,246,0.3)] hover:shadow-[0_0_50px_-10px_rgba(139,92,246,0.5)] hover:border-violet-500/50"
           >
-            {/* Background Gradient */}
-            <span className="absolute inset-0 bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 transition-all duration-500 group-hover:scale-110"></span>
+            {/* Liquid Fill Background */}
+            <span className="absolute inset-0 translate-y-[101%] bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 transition-transform duration-500 ease-[cubic-bezier(0.85,0,0.15,1)] group-hover:translate-y-0"></span>
 
-            {/* Glow Effect */}
-            <span className="absolute inset-0 rounded-2xl blur-xl opacity-50 bg-violet-600 group-hover:opacity-80 transition duration-300"></span>
-
-            {/* Shine Effect */}
-            <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-20 transition duration-300"></span>
+            {/* Animated Glow Rim */}
+            <span className="absolute inset-[-1px] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-violet-500 via-fuchsia-500 to-violet-500 blur-sm -z-10"></span>
 
             {/* Content */}
-            <span className="relative z-10 flex items-center gap-3!">
-              Get Resume
-              <svg
-                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
+            <span className="relative z-10 flex items-center gap-4! transition-transform duration-300 group-hover:scale-105">
+              <span className="relative text-xl font-bold">
+                Get Resume
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-white/60 transition-all duration-300 group-hover:w-full"></span>
+              </span>
+              <div className="relative">
+                <svg
+                  className="w-5 h-5 transition-all duration-500 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:rotate-12"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+              </div>
             </span>
           </a>
         </div>
