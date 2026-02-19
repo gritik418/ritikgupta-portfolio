@@ -16,10 +16,10 @@ const Robot = () => {
         ease: "sine.inOut",
       });
 
-      // Eye scanning animation
-      gsap.to(".robot-eye", {
-        x: 5,
-        duration: 1.5,
+      // Eye and beam horizontal sync animation
+      gsap.to(".eye-scanner-group", {
+        x: 10,
+        duration: 3,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
@@ -37,7 +37,7 @@ const Robot = () => {
 
       // Scanning beam sweep animation
       gsap.to(".robot-beam", {
-        rotate: 15,
+        rotate: 20,
         duration: 3,
         repeat: -1,
         yoyo: true,
