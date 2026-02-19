@@ -129,9 +129,14 @@ const ChatbotShowcase = () => {
         {/* Video Column */}
         <div
           ref={videoRef}
-          className="chatbot-video mx-auto! mb-24! relative flex flex-col lg:flex-row items-center justify-center gap-12!"
+          className="chatbot-video max-w-[680px] mx-auto! mb-24! relative flex flex-col lg:flex-row items-center justify-center gap-12!"
         >
-          <div className="relative rounded-[2rem] overflow-hidden max-w-[680px] w-full border border-white/10 shadow-[0_40px_100px_rgba(139,92,246,0.15)] bg-black/40 backdrop-blur-sm">
+          {/* Robot Helper */}
+          <div className="hidden absolute z-200 bottom-0 translate-y-1/3 left-0 -translate-x-1/2 md:block">
+            <Robot />
+          </div>
+
+          <div className="relative rounded-[2rem] overflow-hidden w-full shadow-[0_40px_100px_rgba(139,92,246,0.15)] bg-black/40 backdrop-blur-sm">
             <video
               src="/portfolio-chatbot.mp4"
               autoPlay
@@ -144,21 +149,6 @@ const ChatbotShowcase = () => {
             {/* Decorative Frame Elements */}
             <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-white/10 rounded-[2rem]" />
             <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
-          </div>
-
-          {/* Robot Helper */}
-          <div className="hidden md:block lg:absolute lg:-right-32 lg:top-1/2 lg:-translate-y-1/2">
-            <Robot />
-          </div>
-
-          <div className="relative top-0 mx-auto! left-0 w-full h-full max-w-[800px] pointer-events-none">
-            <div className="absolute -top-6 -right-6 px-4! py-2! bg-violet-600 rounded-full text-[10px] font-black tracking-widest text-white shadow-xl animate-float-slow">
-              RAG
-            </div>
-            <div className="absolute -bottom-6 -left-6 px-4! py-2! bg-white/5 backdrop-blur-md border border-white/10 rounded-full text-[10px] font-black tracking-widest text-white shadow-xl animate-float">
-              PROD-READY
-            </div>
-            {/* Floating Tags */}
           </div>
         </div>
 
