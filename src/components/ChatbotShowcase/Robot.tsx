@@ -97,8 +97,21 @@ const Robot = () => {
           />
           {/* Eye Visor */}
           <rect x="35" y="30" width="30" height="12" rx="6" fill="#111827" />
-          {/* Eye Light */}
-          <circle cx="45" cy="36" r="3" fill="#A78BFA" className="robot-eye" />
+
+          {/* Eye + Beam Group (Synced) */}
+          <g className="eye-scanner-group" transform="translate(40, 36)">
+            {/* Eye Light */}
+            <circle r="3" fill="#A78BFA" className="robot-eye" />
+
+            {/* Scanning Beam (overlaying) */}
+            <g className="robot-beam">
+              <path
+                d="M0 0 L400 -120 L400 120 Z"
+                fill="url(#scanning-gradient)"
+                className="opacity-40"
+              />
+            </g>
+          </g>
 
           {/* Body */}
           <rect
@@ -160,15 +173,6 @@ const Robot = () => {
             strokeWidth="2"
           />
           <circle cx="65" cy="10" r="2" fill="#8B5CF6" />
-
-          {/* Scanning Beam (overlaying visor) */}
-          <g className="robot-beam" transform="translate(50, 36)">
-            <path
-              d="M0 0 L400 -100 L400 100 Z"
-              fill="url(#scanning-gradient)"
-              className="opacity-40"
-            />
-          </g>
         </g>
       </svg>
     </div>
