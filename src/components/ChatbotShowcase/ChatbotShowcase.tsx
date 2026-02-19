@@ -103,7 +103,7 @@ const ChatbotShowcase = () => {
   return (
     <section
       ref={containerRef}
-      className="relative pb-8! bg-black overflow-hidden"
+      className="relative pb-8! pt-24! bg-black overflow-hidden"
     >
       {/* Background Accent */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-violet-900/5 blur-[120px] rounded-full pointer-events-none" />
