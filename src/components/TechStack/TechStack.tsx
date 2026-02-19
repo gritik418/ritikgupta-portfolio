@@ -1,4 +1,5 @@
 import { useGSAP } from "@gsap/react";
+import { LuBrainCircuit } from "react-icons/lu";
 import {
   SiAuth0,
   SiAxios,
@@ -6,16 +7,21 @@ import {
   SiChakraui,
   SiCloudinary,
   SiCss3,
+  SiDatabricks,
   SiDjango,
   SiDocker,
+  SiDrizzle,
   SiExpress,
+  SiFastapi,
   SiFirebase,
   SiGit,
   SiGraphql,
   SiGreensock,
   SiHtml5,
+  SiHuggingface,
   SiJavascript,
   SiJsonwebtokens,
+  SiLangchain,
   SiLinux,
   SiMongodb,
   SiMysql,
@@ -23,6 +29,8 @@ import {
   SiNextdotjs,
   SiNodedotjs,
   SiNpm,
+  SiOllama,
+  SiOpenai,
   SiPassport,
   SiPostgresql,
   SiPrisma,
@@ -65,8 +73,10 @@ const techStack = {
     { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
     { name: "Express.js", icon: <SiExpress /> },
     { name: "NestJS", icon: <SiNestjs className="text-red-500" /> },
+    { name: "FastAPI", icon: <SiFastapi className="text-teal-400" /> },
     { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
     { name: "Prisma", icon: <SiPrisma className="text-white" /> },
+    { name: "Drizzle ORM", icon: <SiDrizzle className="text-yellow-400" /> },
     { name: "Supabase", icon: <SiSupabase className="text-emerald-500" /> },
     { name: "GraphQL", icon: <SiGraphql className="text-pink-500" /> },
     { name: "Python", icon: <SiPython className="text-yellow-500" /> },
@@ -75,6 +85,21 @@ const techStack = {
     { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-500" /> },
     { name: "Passport.js", icon: <SiPassport className="text-green-400" /> },
     { name: "OAuth", icon: <SiAuth0 className="text-orange-500" /> },
+  ],
+
+  AI: [
+    { name: "RAG", icon: <LuBrainCircuit className="text-purple-400" /> },
+    { name: "LangChain", icon: <SiLangchain className="text-green-500" /> },
+    { name: "Ollama", icon: <SiOllama className="text-gray-300" /> },
+    {
+      name: "Hugging Face",
+      icon: <SiHuggingface className="text-yellow-500" />,
+    },
+    { name: "LLMs", icon: <SiOpenai className="text-white" /> },
+    {
+      name: "ChromaDB (Vector DB)",
+      icon: <SiDatabricks className="text-purple-500" />,
+    },
   ],
   Infrastructure: [
     { name: "Git", icon: <SiGit className="text-orange-500" /> },
@@ -118,7 +143,7 @@ const TechStack = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 justify-center md:grid-cols-3 gap-6">
           {Object.entries(techStack).map(([category, items]) => (
             <div
               key={category}

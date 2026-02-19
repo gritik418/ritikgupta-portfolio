@@ -207,15 +207,15 @@ const BioSection = () => {
 
               {/* Stats/Floating elements */}
               <div className="absolute top-0 right-0 !p-6 !rounded-2xl border !border-white/5 !bg-white/5 !backdrop-blur-md animate-[float_4s_infinite_ease-in-out]">
-                <span className="text-3xl font-black text-white">4+</span>
+                <span className="text-3xl font-black text-white">AI</span>
                 <p className="text-[8px] uppercase tracking-widest text-gray-500">
-                  Years of Experience
+                  Powered Projects
                 </p>
               </div>
               <div className="absolute bottom-10 left-[-20px] !p-6 !rounded-2xl border border-white/5 bg-white/5 backdrop-blur-md animate-[float_5s_infinite_ease-in-out] delay-500">
-                <span className="text-3xl font-black text-white">10+</span>
+                <span className="text-3xl font-black text-white">20+</span>
                 <p className="text-[8px] uppercase tracking-widest text-gray-500">
-                  Projects Delivered
+                  Projects
                 </p>
               </div>
             </div>
