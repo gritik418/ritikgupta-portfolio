@@ -34,6 +34,16 @@ const Robot = () => {
         yoyo: true,
         ease: "power1.inOut",
       });
+
+      // Scanning beam sweep animation
+      gsap.to(".robot-beam", {
+        rotate: 15,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        transformOrigin: "left center",
+      });
     },
     { scope: robotRef },
   );
@@ -43,11 +53,35 @@ const Robot = () => {
       ref={robotRef}
       className="relative w-48 h-64 flex items-center justify-center pointer-events-none"
     >
+      {/* Scanning Beam */}
+      <div className="absolute left-[45%] top-[14%] w-[400px] h-[200px] pointer-events-none robot-beam origin-left z-0">
+        <svg
+          viewBox="0 0 400 200"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full opacity-30"
+        >
+          <path d="M0 100 L400 0 L400 200 Z" fill="url(#scanning-gradient)" />
+          <defs>
+            <radialGradient
+              id="scanning-gradient"
+              cx="0"
+              cy="100"
+              r="400"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+
       <svg
         viewBox="0 0 100 120"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-full drop-shadow-[0_0_20px_rgba(139,92,246,0.3)]"
+        className="w-full h-full drop-shadow-[0_0_20px_rgba(139,92,246,0.3)] relative z-10"
       >
         {/* Shadow */}
         <ellipse
