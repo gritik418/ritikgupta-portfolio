@@ -100,12 +100,17 @@ const Robot = () => {
             strokeWidth="2"
           />
           {/* Eye Visor */}
-          <rect x="35" y="30" width="30" height="12" rx="6" fill="#111827" />
+          <rect x="35" y="32" width="30" height="12" rx="6" fill="#111827" />
 
           {/* Eye + Beam Group (Synced) */}
-          <g className="eye-scanner-group" transform="translate(38, 36)">
-            {/* Eye Light */}
-            <circle r="3" fill="#A78BFA" className="robot-eye" />
+          <g className="eye-scanner-group" transform="translate(38, 38)">
+            {/* Eye Light with Glow */}
+            <circle
+              r="3"
+              fill="#A78BFA"
+              className="robot-eye"
+              filter="url(#eye-glow)"
+            />
 
             {/* Scanning Beam (overlaying) */}
             <g className="robot-beam">
