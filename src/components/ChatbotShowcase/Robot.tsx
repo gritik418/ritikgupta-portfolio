@@ -53,36 +53,26 @@ const Robot = () => {
       ref={robotRef}
       className="relative w-48 h-64 flex items-center justify-center pointer-events-none"
     >
-      {/* Scanning Beam */}
-      <div className="absolute left-[45%] top-[14%] w-[400px] h-[200px] pointer-events-none robot-beam origin-left z-0">
-        <svg
-          viewBox="0 0 400 200"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full opacity-30"
-        >
-          <path d="M0 100 L400 0 L400 200 Z" fill="url(#scanning-gradient)" />
-          <defs>
-            <radialGradient
-              id="scanning-gradient"
-              cx="0"
-              cy="100"
-              r="400"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0" />
-            </radialGradient>
-          </defs>
-        </svg>
-      </div>
-
       <svg
         viewBox="0 0 100 120"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-full drop-shadow-[0_0_20px_rgba(139,92,246,0.3)] relative z-10"
+        className="w-full h-full drop-shadow-[0_0_20px_rgba(139,92,246,0.3)] relative z-10 overflow-visible"
       >
+        <defs>
+          <radialGradient
+            id="scanning-gradient"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(0 0) rotate(0) scale(400 200)"
+          >
+            <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+
         {/* Shadow */}
         <ellipse
           cx="50"
@@ -94,6 +84,15 @@ const Robot = () => {
         />
 
         <g className="robot-body">
+          {/* Scanning Beam (projecting from visor) */}
+          <g className="robot-beam" transform="translate(50, 36)">
+            <path
+              d="M0 0 L400 -100 L400 100 Z"
+              fill="url(#scanning-gradient)"
+              className="opacity-40"
+            />
+          </g>
+
           {/* Head */}
           <rect
             x="30"
