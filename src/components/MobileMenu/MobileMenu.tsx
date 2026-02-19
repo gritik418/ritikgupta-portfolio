@@ -1,7 +1,7 @@
-import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
+import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 interface PropsType {
   isOpen: boolean;
@@ -15,90 +15,93 @@ const MobileMenu = ({ isOpen, setIsOpen }: PropsType) => {
   useEffect(() => {
     if (isOpen) {
       const scrollY = window.scrollY;
-      document.body.style.position = 'fixed';
+      document.body.style.position = "fixed";
       document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = '100%';
-      document.body.style.overflow = 'hidden';
+      document.body.style.width = "100%";
+      document.body.style.overflow = "hidden";
     } else {
       const scrollY = document.body.style.top;
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      document.body.style.overflow = '';
-      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflow = "";
+      window.scrollTo(0, parseInt(scrollY || "0") * -1);
     }
 
     return () => {
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      document.body.style.overflow = '';
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
-  useGSAP(() => {
-
-    if (containerRef.current) {
+  useGSAP(
+    () => {
+      if (containerRef.current) {
         const starsContainer = containerRef.current;
         const starCount = 20;
-        
+
         for (let i = 0; i < starCount; i++) {
-            const star = document.createElement("div");
-            star.className = "absolute rounded-full border border-white/50 pointer-events-none";
-            
-            // Random size (1-4px)
-            const size = Math.random() * 12 + 1;
-            star.style.width = `${size}px`;
-            star.style.height = `${size}px`;
-            
-            // Random position
-            star.style.left = `${Math.random() * 100}%`;
-            star.style.top = `${Math.random() * 100}%`;
-            
-            // Random opacity for twinkling effect
-            const baseOpacity = Math.random() * 0.6 + 0.3;
-            star.style.opacity = `${baseOpacity}`;
-            
-            // Add slight glow to make them more visible
-            star.style.boxShadow = `0 0 ${size}px rgba(255, 255, 255, ${baseOpacity * 0.5})`;
-            
-            starsContainer.appendChild(star);
-            
-            gsap.to(star, {
-                x: Math.random() * 2,
-                y: Math.random() * 2,
-                opacity: Math.random() * 0.2 + 0.1, // Lower opacity for more dramatic blink
-                duration: Math.random() * 1.5 + 0.5, // Faster blinking (0.5-2s)
-                repeat: -1,
-                yoyo: true,
-                ease: "power1.inOut"
-            });
+          const star = document.createElement("div");
+          star.className =
+            "absolute rounded-full border border-white/50 pointer-events-none";
+
+          // Random size (1-4px)
+          const size = Math.random() * 12 + 1;
+          star.style.width = `${size}px`;
+          star.style.height = `${size}px`;
+
+          // Random position
+          star.style.left = `${Math.random() * 100}%`;
+          star.style.top = `${Math.random() * 100}%`;
+
+          // Random opacity for twinkling effect
+          const baseOpacity = Math.random() * 0.6 + 0.3;
+          star.style.opacity = `${baseOpacity}`;
+
+          // Add slight glow to make them more visible
+          star.style.boxShadow = `0 0 ${size}px rgba(255, 255, 255, ${baseOpacity * 0.5})`;
+
+          starsContainer.appendChild(star);
+
+          gsap.to(star, {
+            x: Math.random() * 2,
+            y: Math.random() * 2,
+            opacity: Math.random() * 0.2 + 0.1, // Lower opacity for more dramatic blink
+            duration: Math.random() * 1.5 + 0.5, // Faster blinking (0.5-2s)
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut",
+          });
         }
-    }
-  }, { scope: containerRef });
+      }
+    },
+    { scope: containerRef },
+  );
 
   return (
     <div
       className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ${
-        isOpen ? 'pointer-events-auto' : 'pointer-events-none'
+        isOpen ? "pointer-events-auto" : "pointer-events-none"
       }`}
       onClick={() => setIsOpen(false)}
     >
       {/* Backdrop */}
       <div
         className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${
-          isOpen ? 'opacity-100' : 'opacity-0'
+          isOpen ? "opacity-100" : "opacity-0"
         }`}
       />
 
       {/* Menu Panel */}
       <div
         ref={menuRef}
-        onClick={(e) => e.stopPropagation()}
+        onClick={(e: React.MouseEvent) => e.stopPropagation()}
         className="fixed right-0 top-0 h-screen w-[90%] max-w-sm z-50 md:hidden bg-gradient-to-br from-slate-900 via-purple-900/20 to-blue-900/40 overflow-hidden"
         style={{
-          transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
-          transition: 'transform 0.7s cubic-bezier(0.23, 1, 0.32, 1)',
+          transform: isOpen ? "translateX(0)" : "translateX(100%)",
+          transition: "transform 0.7s cubic-bezier(0.23, 1, 0.32, 1)",
         }}
       >
         {/* Background effects */}
@@ -115,7 +118,10 @@ const MobileMenu = ({ isOpen, setIsOpen }: PropsType) => {
         <div className="absolute inset-0 backdrop-blur-xl bg-black/30 border border-white/20 shadow-2xl" />
 
         {/* Content */}
-        <div ref={containerRef} className="h-full w-full !p-8 relative z-10 flex flex-col !pt-12">
+        <div
+          ref={containerRef}
+          className="h-full w-full !p-8 relative z-10 flex flex-col !pt-12"
+        >
           <div className="flex-1 flex flex-col justify-center !space-y-8">
             <Link
               to="/"

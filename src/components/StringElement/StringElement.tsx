@@ -35,7 +35,7 @@ const StringElement = () => {
         ease: "elastic.out(1.2, 0.4)",
       });
     };
-    
+
     container.addEventListener("mousemove", handleMouseMove);
     container.addEventListener("mouseleave", handleMouseLeave);
 
@@ -47,7 +47,10 @@ const StringElement = () => {
 
   return (
     <div className="!py-0 opacity-30 select-none flex items-center justify-center">
-      <div ref={containerRef} className="max-w-7xl w-full mx-auto px-6 h-[100px] cursor-pointer">
+      <div
+        ref={containerRef}
+        className="max-w-7xl w-full mx-auto px-6 h-[100px] cursor-pointer"
+      >
         <svg
           width="100%"
           height="100%"

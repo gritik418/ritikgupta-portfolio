@@ -147,7 +147,7 @@ const Contact = () => {
 
     emailjs
       .sendForm(serviceId, templateId, form.current, {
-        publicKey,
+        publicKey: publicKey,
       })
       .then(() => {
         toast.success("Message sent successfully!");
