@@ -143,6 +143,8 @@ const ChatbotShowcase = () => {
               loop
               muted
               playsInline
+              // @ts-ignore
+              type="video/mp4"
               className="w-full aspect-video object-cover"
             />
 

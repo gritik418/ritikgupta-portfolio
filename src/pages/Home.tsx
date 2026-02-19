@@ -12,14 +12,19 @@ const Home = () => {
   return (
     <div className="flex flex-col gap-0 overflow-hidden">
       <Hero />
-      <BioSection />
       <div className="relative flex flex-col !pb-16 z-10 bg-black">
         <ChatbotShowcase />
-        <StringElement />
-        <TechStack />
+      </div>
+
+      <BioSection />
+
+      <div className="relative flex flex-col !pb-16 z-10 bg-black">
         <div className="h-16 lg:hidden"></div>
+        <TechStack />
+        <StringElement />
         <Experience />
         <div className="h-32"></div>
+        <StringElement />
         <Projects />
         <GithubSection />
         <ScrollToTop />
