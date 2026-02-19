@@ -18,7 +18,7 @@ const Robot = () => {
 
       // Eye and beam horizontal sync animation
       gsap.to(".eye-scanner-group", {
-        x: 10,
+        x: 24,
         duration: 3,
         repeat: -1,
         yoyo: true,
@@ -99,7 +99,7 @@ const Robot = () => {
           <rect x="35" y="30" width="30" height="12" rx="6" fill="#111827" />
 
           {/* Eye + Beam Group (Synced) */}
-          <g className="eye-scanner-group" transform="translate(40, 36)">
+          <g className="eye-scanner-group" transform="translate(38, 36)">
             {/* Eye Light */}
             <circle r="3" fill="#A78BFA" className="robot-eye" />
 
