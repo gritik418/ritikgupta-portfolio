@@ -71,6 +71,10 @@ const Robot = () => {
             <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.6" />
             <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0" />
           </radialGradient>
+          <filter id="eye-glow">
+            <feGaussianBlur stdDeviation="2" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
         </defs>
 
         {/* Shadow */}
