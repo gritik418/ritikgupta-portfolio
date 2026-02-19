@@ -84,15 +84,6 @@ const Robot = () => {
         />
 
         <g className="robot-body">
-          {/* Scanning Beam (projecting from visor) */}
-          <g className="robot-beam" transform="translate(50, 36)">
-            <path
-              d="M0 0 L400 -100 L400 100 Z"
-              fill="url(#scanning-gradient)"
-              className="opacity-40"
-            />
-          </g>
-
           {/* Head */}
           <rect
             x="30"
@@ -169,6 +160,15 @@ const Robot = () => {
             strokeWidth="2"
           />
           <circle cx="65" cy="10" r="2" fill="#8B5CF6" />
+
+          {/* Scanning Beam (overlaying visor) */}
+          <g className="robot-beam" transform="translate(50, 36)">
+            <path
+              d="M0 0 L400 -100 L400 100 Z"
+              fill="url(#scanning-gradient)"
+              className="opacity-40"
+            />
+          </g>
         </g>
       </svg>
     </div>
