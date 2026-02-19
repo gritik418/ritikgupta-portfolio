@@ -16,9 +16,12 @@ const Robot = () => {
         ease: "sine.inOut",
       });
 
+      // Initial position for eye and beam
+      gsap.set(".eye-scanner-group", { x: 38, y: 38 });
+
       // Eye and beam horizontal sync animation
       gsap.to(".eye-scanner-group", {
-        x: 24,
+        x: 62,
         duration: 3,
         repeat: -1,
         yoyo: true,
@@ -36,8 +39,9 @@ const Robot = () => {
       });
 
       // Scanning beam sweep animation
+      // Robot is at bottom-left, so it should scan UP and RIGHT
       gsap.to(".robot-beam", {
-        rotate: 20,
+        rotate: -20,
         duration: 3,
         repeat: -1,
         yoyo: true,
@@ -100,10 +104,10 @@ const Robot = () => {
             strokeWidth="2"
           />
           {/* Eye Visor */}
-          <rect x="35" y="32" width="30" height="12" rx="6" fill="#111827" />
+          <rect x="32" y="32" width="36" height="12" rx="6" fill="#111827" />
 
           {/* Eye + Beam Group (Synced) */}
-          <g className="eye-scanner-group" transform="translate(38, 38)">
+          <g className="eye-scanner-group">
             {/* Eye Light with Glow */}
             <circle
               r="3"
@@ -113,7 +117,7 @@ const Robot = () => {
             />
 
             {/* Scanning Beam (overlaying) */}
-            <g className="robot-beam">
+            <g className="robot-beam" transform="rotate(-30)">
               <path
                 d="M0 0 L400 -120 L400 120 Z"
                 fill="url(#scanning-gradient)"
