@@ -38,10 +38,8 @@ const Robot = () => {
         ease: "power1.inOut",
       });
 
-      // Scanning beam sweep animation
-      // Robot is at bottom-left, so it should scan UP and RIGHT
-      gsap.to(".robot-beam", {
-        rotate: -20,
+      gsap.to(".bot-beam", {
+        rotate: -30,
         duration: 3,
         repeat: -1,
         yoyo: true,
@@ -117,7 +115,7 @@ const Robot = () => {
             />
 
             {/* Scanning Beam (overlaying) */}
-            <g className="robot-beam" transform="rotate(-30)">
+            <g className="bot-beam" transform="rotate(-50)">
               <path
                 d="M0 0 L400 -120 L400 120 Z"
                 fill="url(#scanning-gradient)"
