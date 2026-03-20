@@ -12,6 +12,8 @@ import {
   FiTarget,
   FiZap,
 } from "react-icons/fi";
+import { SiPython, SiOllama, SiDatabricks } from "react-icons/si";
+import { LuBrainCircuit } from "react-icons/lu";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -87,6 +89,17 @@ const ChatbotShowcase = () => {
           "-=0.5",
         )
         .from(
+          ".chatbot-tech",
+          {
+            opacity: 0,
+            y: 20,
+            stagger: 0.1,
+            duration: 0.8,
+            ease: "power3.out",
+          },
+          "-=0.7",
+        )
+        .from(
           ".chatbot-video",
           {
             opacity: 0,
@@ -105,25 +118,60 @@ const ChatbotShowcase = () => {
       ref={containerRef}
       className="relative pb-8! pt-24! bg-black overflow-hidden"
     >
-      {/* Background Accent */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-violet-900/5 blur-[120px] rounded-full pointer-events-none" />
+      {/* Background Patterns & Accents */}
+      <div className="absolute inset-0 opacity-20 [mask-image:radial-gradient(ellipse_at_center,black_70%,transparent_100%)]">
+        <div className="absolute inset-0 bg-[radial-gradient(#2e1065_1px,transparent_1px)] [background-size:32px_32px]" />
+      </div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-violet-900/10 blur-[160px] rounded-full pointer-events-none" />
+      <div className="absolute -top-24 -left-24 w-96 h-96 bg-fuchsia-600/5 blur-[100px] rounded-full" />
 
       <div className="max-w-7xl mx-auto! px-6! relative z-10">
-        <div className="text-center mb-16! md:mb-24!">
-          <h2 className="chatbot-title text-xs uppercase tracking-[0.5em] font-bold text-violet-500 mb-6!">
+        <div className="text-center mb-16! md:mb-32!">
+          <h2 className="chatbot-title text-xl! md:text-base uppercase tracking-[0.6em] font-black text-violet-500 mb-8!">
             AI Portfolio Assistant
           </h2>
-          <h3 className="chatbot-title text-4xl md:text-6xl font-bold text-white tracking-tight leading-tight!">
+          <h3 className="chatbot-title text-6xl md:text-9xl font-black text-white tracking-tighter leading-[0.9]!">
             Next-Gen{" "}
-            <span className="italic font-serif text-violet-400">
+            <span className="italic font-serif bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-fuchsia-400 to-violet-500 animate-gradient">
               Interaction
             </span>
           </h3>
-          <p className="chatbot-title text-gray-400 mt-6! max-w-2xl mx-auto! text-lg font-light">
-            An intelligent RAG-based assistant that bridges the gap between
-            static content and interactive discovery. Professional knowledge,
-            encoded.
+          <p className="chatbot-title text-gray-400 mt-10! max-w-3xl mx-auto! text-xl md:text-2xl font-light leading-relaxed">
+            An intelligent{" "}
+            <span className="text-white font-medium">RAG-based assistant</span>{" "}
+            that bridges the gap between static content and interactive
+            discovery. Professional knowledge, encoded.
           </p>
+
+          <div className="chatbot-tech mt-12! flex flex-wrap justify-center gap-4 md:gap-8">
+            {[
+              { icon: SiPython, label: "Python", color: "text-yellow-500" },
+              { icon: SiOllama, label: "Ollama", color: "text-white" },
+              {
+                icon: SiDatabricks,
+                label: "ChromaDB",
+                color: "text-orange-500",
+              },
+              {
+                icon: LuBrainCircuit,
+                label: "RAG",
+                color: "text-purple-400",
+              },
+            ].map((tech, i) => (
+              <div key={i} className="flex flex-col items-center gap-2 group">
+                <div
+                  className={`p-3 rounded-xl group-hover:border-violet-500/50 transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(139,92,246,0.2)]`}
+                >
+                  <tech.icon
+                    className={`w-6 h-6 md:w-8 md:h-8 ${tech.color}`}
+                  />
+                </div>
+                <span className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-gray-500 group-hover:text-violet-400 transition-colors">
+                  {tech.label}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Video Column */}

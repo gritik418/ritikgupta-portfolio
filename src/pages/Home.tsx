@@ -4,6 +4,7 @@ import StringElement from "../components/StringElement/StringElement";
 import TechStack from "../components/TechStack/TechStack";
 import Experience from "../components/Experience/Experience";
 import ChatbotShowcase from "../components/ChatbotShowcase/ChatbotShowcase";
+import TrackrShowcase from "../components/TrackrShowcase/TrackrShowcase";
 import BioSection from "../components/Bio/Bio";
 import GithubSection from "../components/GithubSection/GithubSection";
 import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
@@ -12,8 +13,9 @@ const Home = () => {
   return (
     <div className="flex flex-col gap-0 overflow-hidden">
       <Hero />
-      <div className="relative flex flex-col !pb-16 z-10 bg-black">
+      <div className="relative flex flex-col z-10 bg-black">
         <ChatbotShowcase />
+        <TrackrShowcase />
       </div>
 
       <BioSection />

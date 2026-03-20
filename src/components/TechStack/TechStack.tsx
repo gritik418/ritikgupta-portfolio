@@ -143,7 +143,7 @@ const TechStack = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 justify-center md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 justify-center lg:grid-cols-2 gap-6">
           {Object.entries(techStack).map(([category, items]) => (
             <div
               key={category}
