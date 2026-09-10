@@ -224,7 +224,7 @@ const BioSection = () => {
 
         <div className="flex justify-center mt-12! items-center">
           <a
-            href="/Ritik_Gupta_Resume_2025.pdf"
+            href="/Resume.pdf"
             target="_blank"
             className="magnetic-btn group relative inline-flex items-center justify-center px-12! py-6! overflow-hidden rounded-2xl font-bold uppercase tracking-[0.2em] text-xs text-white bg-white/5 backdrop-blur-xl border border-white/10 transition-all duration-300 active:scale-95 shadow-[0_0_40px_-15px_rgba(139,92,246,0.3)] hover:shadow-[0_0_50px_-10px_rgba(139,92,246,0.5)] hover:border-violet-500/50"
           >

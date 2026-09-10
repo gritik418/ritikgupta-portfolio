@@ -91,7 +91,7 @@ const Experience = () => {
           </p>
 
           <a
-            href="/Ritik_Gupta_Resume_2025.pdf"
+            href="/Resume.pdf"
             target="_blank"
             className="!mt-12 inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest hover:text-violet-400 transition-colors group"
           >

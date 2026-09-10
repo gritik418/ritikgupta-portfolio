@@ -14,8 +14,8 @@ const Home = () => {
     <div className="flex flex-col gap-0 overflow-hidden">
       <Hero />
       <div className="relative flex flex-col z-10 bg-black">
-        <ChatbotShowcase />
         <TrackrShowcase />
+        <ChatbotShowcase />
       </div>
 
       <BioSection />

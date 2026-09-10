@@ -26,7 +26,7 @@ const Hero = () => {
       </div>
 
       {/* Main Sticky Container */}
-      <div className="hero-container relative w-full h-[250vh]">
+      <div className="hero-container relative w-full h-[150vh]">
         <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden px-6 md:px-12 py-20">
           <div className="hero-text-wrapper text-center z-10 max-w-5xl flex flex-col items-center justify-center h-full pb-32">
             <h1 className="hero-title text-[clamp(2.5rem,14vw,10rem)] font-black tracking-tighter mb-8 opacity-0 translate-y-20 leading-[0.8] text-white">
@@ -54,34 +54,11 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Project Reveal Images */}
-          <div className="project-preview-container absolute inset-0 pointer-events-none flex items-center justify-center">
-            <div className="relative w-full max-w-6xl h-full flex items-center justify-center">
-              <div className="project-preview project-1 absolute w-[90%] md:w-[75%] aspect-video rounded-[2rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.9)] opacity-0 scale-50 rotate-3 border border-white/10">
-                <img
-                  src="/huddle-img.png"
-                  className="w-full h-full object-cover"
-                  alt="Project"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              </div>
-              <div className="project-preview project-2 absolute w-[90%] md:w-[75%] aspect-video rounded-[2rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.9)] opacity-0 scale-50 -rotate-2 border border-white/10">
-                <img
-                  src="/iNotes-img.png"
-                  className="w-full h-full object-cover"
-                  alt="Project"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              </div>
-              <div className="project-preview project-3 absolute w-[90%] md:w-[75%] aspect-video rounded-[2rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.9)] opacity-0 scale-50 rotate-1 border border-white/10">
-                <img
-                  src="/QuickShare-img.png"
-                  className="w-full h-full object-cover"
-                  alt="Project"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              </div>
-            </div>
+          {/* Simple Abstract Elements */}
+          <div className="absolute inset-0 pointer-events-none flex items-center justify-center -z-10">
+            <div className="absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] border border-violet-500/20 rounded-full animate-[spin_10s_linear_infinite]" />
+            <div className="absolute w-[400px] h-[400px] md:w-[700px] md:h-[700px] border border-fuchsia-500/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
+            <div className="absolute w-full h-full bg-gradient-to-b from-transparent via-black/50 to-black z-0" />
           </div>
         </div>
       </div>

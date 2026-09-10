@@ -23,6 +23,7 @@ import {
   SiPostgresql,
   SiPrisma,
 } from "react-icons/si";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -217,7 +218,22 @@ const TrackrShowcase = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-16! items-center">
+        <div className="flex justify-center my-16!">
+          <Link
+            to="https://gettrackr.vercel.app/"
+            target="_blank"
+            className="group relative inline-flex items-center justify-center gap-3 !px-8 !py-4 font-bold text-white transition-all duration-300 ease-in-out bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:border-violet-500/50 hover:shadow-[0_0_30px_-5px_rgba(139,92,246,0.3)] overflow-hidden"
+          >
+            <div className="absolute inset-0 w-full h-full -z-10 bg-gradient-to-r from-violet-600/20 to-fuchsia-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute -inset-1 -z-20 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
+            <span className="relative z-10 tracking-wider text-sm md:text-base uppercase">
+              View Live Demo
+            </span>
+            <BsArrowRight className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 text-violet-400 group-hover:text-white" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 mt-8 gap-16! items-center">
           {/* Features Column */}
           <div ref={featureListRef} className="space-y-8!">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6!">
